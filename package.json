@@ -1,0 +1,38 @@
+{
+  "name": "news-maroc",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "NEWS MAROC — منصة إخبارية مغربية حديثة (React + TypeScript + Vite + Tailwind + Supabase)",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test:agent": "tsx scripts/test-agent.mts",
+    "test:images": "tsx scripts/test-image-extraction.mts",
+    "predev": "node scripts/generate-demo-images.mjs",
+    "prebuild": "node scripts/generate-demo-images.mjs && node scripts/generate-sitemap.mjs",
+    "typecheck": "tsc --noEmit",
+    "smoke": "tsx scripts/smoke.mts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "error": "^10.4.0",
+    "lucide-react": "^0.446.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "happy-dom": "^20.14.5",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.12",
+    "tsx": "^4.23.15",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8"
+  }
+}

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+
+# Google News
+User-agent: Googlebot-News
+Allow: /
+
+Sitemap: https://newsmaroc.ma/sitemap.xml

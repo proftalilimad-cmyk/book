@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-ink-50 text-ink-900 font-sans antialiased;
+    @apply dark:bg-ink-950 dark:text-ink-100;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    @apply bg-brand-600 text-white;
+  }
+  img {
+    @apply select-none;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-site px-4 sm:px-6;
+  }
+  .card {
+    @apply rounded-2xl bg-white shadow-card ring-1 ring-ink-900/5 dark:bg-ink-925 dark:ring-white/10;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold leading-5;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:focus-visible:ring-offset-ink-950;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700;
+  }
+  .btn-ghost {
+    @apply btn bg-ink-100 text-ink-800 hover:bg-ink-200 dark:bg-ink-800 dark:text-ink-100 dark:hover:bg-ink-700;
+  }
+  .btn-danger {
+    @apply btn bg-red-600/10 text-red-700 hover:bg-red-600/20 dark:text-red-400;
+  }
+  .input {
+    @apply w-full rounded-xl border-0 bg-ink-100/80 px-3.5 py-2.5 text-sm text-ink-900 ring-1 ring-inset ring-ink-900/10 placeholder:text-ink-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-500 dark:bg-ink-800 dark:text-ink-100 dark:ring-white/10;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-bold text-ink-600 dark:text-ink-300;
+  }
+  .section-title {
+    @apply relative flex items-center gap-3 text-xl font-black sm:text-2xl;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ---------- محتوى المقال (Rich Text) ---------- */
+.article-content {
+  @apply text-[17px] leading-8 text-ink-800 dark:text-ink-200;
+}
+.article-content p {
+  @apply mb-5;
+}
+.article-content > p:first-of-type {
+  @apply text-lg font-medium leading-9 text-ink-900 dark:text-white;
+}
+.article-content h2 {
+  @apply mb-4 mt-9 text-2xl font-black text-ink-900 dark:text-white;
+}
+.article-content h3 {
+  @apply mb-3 mt-7 text-xl font-extrabold text-ink-900 dark:text-white;
+}
+.article-content ul {
+  @apply mb-5 list-disc space-y-1.5 pe-6;
+}
+.article-content ol {
+  @apply mb-5 list-decimal space-y-1.5 pe-6;
+}
+.article-content blockquote {
+  @apply my-6 rounded-xl border-r-4 border-brand-600 bg-brand-50 p-4 text-lg font-bold leading-8 text-brand-900 dark:border-brand-500 dark:bg-brand-950/40 dark:text-brand-100;
+}
+.article-content a {
+  @apply font-bold text-brand-700 underline decoration-brand-300 underline-offset-4 hover:text-brand-600 dark:text-brand-400;
+}
+.article-content img {
+  @apply my-6 w-full rounded-2xl;
+}
+.article-content strong {
+  @apply font-extrabold text-ink-900 dark:text-white;
+}
+.article-content em {
+  @apply text-ink-500 dark:text-ink-400;
+}
+
+/* ---------- شريط الأخبار العاجلة ---------- */
+.ticker-mask {
+  mask-image: linear-gradient(
+    to left,
+    transparent,
+    black 3%,
+    black 97%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to left,
+    transparent,
+    black 3%,
+    black 97%,
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-rtl,
+  .animate-dot-pulse,
+  .animate-ticker-flash {
+    animation: none !important;
+  }
+}
